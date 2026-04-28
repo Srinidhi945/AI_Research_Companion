@@ -1,0 +1,129 @@
+# ==============================
+# PYTHON
+# ==============================
+
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+*.log
+*.bak
+
+# Virtual environments
+venv/
+.venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# ==============================
+# ENVIRONMENT & SECRETS
+# ==============================
+
+.env
+.env.*
+.local/
+*.test.env
+
+# Service credentials
+credentials.json
+service_account.json
+google_credentials.json
+
+# ==============================
+# DATABASES
+# ==============================
+
+*.sqlite3
+db.sqlite3
+dump.rdb
+*.wt
+*.bin
+
+mongodb_data/
+chroma_persist/
+
+# ==============================
+# FILE UPLOADS (USER DATA)
+# ==============================
+
+**/pdf_uploads/
+
+# ==============================
+# MACHINE LEARNING / MODELS
+# ==============================
+
+models/
+!models/.gitkeep
+
+vector_db/
+!vector_db/.gitkeep
+
+grobid/
+!grobid/.gitkeep
+
+*.gguf
+*.pt
+*.pth
+
+# ==============================
+# NODE / FRONTEND
+# ==============================
+
+node_modules/
+build/
+dist/
+.vite/
+.npm/
+.yarn/
+.pnpm-debug.log
+
+# ==============================
+# COVERAGE & CACHE
+# ==============================
+
+coverage/
+htmlcov/
+.cache/
+pytest_cache/
+.mypy_cache/
+
+# ==============================
+# JUPYTER
+# ==============================
+
+.ipynb_checkpoints/
+
+# ==============================
+# DOCKER
+# ==============================
+
+docker-compose.override.yml
+docker-compose-local.yml
+
+# ==============================
+# OS / EDITOR
+# ==============================
+
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# ==============================
+# GENERATED SCRIPTS
+# ==============================
+
+start_backend.bat
+start_frontend.bat
+*.bat
+
+# ==============================
+# TEMP FILES
+# ==============================
+
+*.tmp
+*.temp

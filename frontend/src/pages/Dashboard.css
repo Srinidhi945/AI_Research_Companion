@@ -1,0 +1,279 @@
+/* ================= STATS GRID ================= */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+  margin: 40px 0;
+}
+
+/* ================= STAT CARD ================= */
+
+.stat-card {
+  background: white;
+  border-radius: 18px;
+  padding: 28px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  color: #111827;
+}
+
+.dark .stat-card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #e5e7eb;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  border-color: #8a5cf6;
+  box-shadow: 0 12px 30px rgba(138, 92, 246, 0.25);
+}
+
+.dark .stat-card:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.stat-value {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.stat-title {
+  opacity: 0.75;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+/* ================= HEADER ================= */
+
+.dashboard-title {
+  font-size: 34px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.dashboard-sub {
+  opacity: 0.6;
+  margin-bottom: 50px;
+  font-size: 15px;
+}
+
+/* ================= PANELS ================= */
+
+.dashboard-panel {
+  margin-top: 40px;
+  background: white;
+  padding: 35px;
+  border-radius: 22px;
+  border: 1px solid #e5e7eb;
+  transition: 0.3s ease;
+}
+
+.dark .dashboard-panel {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.dashboard-panel:hover {
+  border-color: rgba(138, 92, 246, 0.3);
+}
+
+.panel-title {
+  margin-bottom: 22px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* ================= ACTIONS ================= */
+
+.actions-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* ================= LIST ITEMS ================= */
+
+.list-item {
+  padding: 14px 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+  opacity: 0.9;
+  transition: 0.2s ease;
+}
+
+.dark .list-item {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.list-item:hover {
+  opacity: 1;
+  padding-left: 6px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+/* ================= OVERLAY BACKDROP ================= */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  animation: fadeOverlay 0.2s ease;
+}
+
+.dark .overlay {
+  background: rgba(8, 12, 32, 0.75);
+}
+
+/* ================= MODAL CONTAINER ================= */
+
+.overlay-content {
+  width: 750px;
+  max-height: 85vh;
+
+  background: white;
+  border-radius: 24px;
+  border: 1px solid #e5e7eb;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* important */
+
+  box-shadow: 0 25px 70px rgba(0,0,0,0.15);
+  animation: slideUp 0.25s ease;
+}
+
+.dark .overlay-content {
+  background: linear-gradient(135deg, #111a3d, #1e1b4b);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 25px 70px rgba(0,0,0,0.6);
+}
+
+/* ================= MODAL HEADER ================= */
+
+.overlay-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 25px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dark .overlay-header {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.overlay-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ================= CLOSE BUTTON ================= */
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #888;
+  transition: 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #ef4444;
+  transform: scale(1.1);
+}
+
+/* ================= MODAL BODY ================= */
+
+.overlay-body {
+  padding: 25px;
+  overflow-y: auto;
+  flex: 1; /* makes only body scroll */
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ================= DASHBOARD ITEMS ================= */
+
+.dashboard-item {
+  display: block;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  text-decoration: none;
+  color: #111827;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.dark .dashboard-item {
+  background-color: rgba(255, 255, 255, 0.04);
+  color: #e0e0e0;
+}
+
+.dashboard-item:hover {
+  transform: translateX(4px);
+}
+
+.dark .dashboard-item:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ================= PROFILE ================= */
+
+.profile-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dark .profile-row {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.profile-input {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  color: #111827;
+}
+
+.dark .profile-input {
+  border: 1px solid #444;
+  background: #1f1f1f;
+  color: white;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes slideUp {
+  from { transform: translateY(25px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
