@@ -1,92 +1,95 @@
-
-
 # 🧠 AI Research Companion
 
-AI-powered research assistant for scientific literature review, PDF analysis, and grounded Q&A with citation support.
+> An AI-powered research assistant that simplifies scientific literature review through semantic search, PDF analysis, and context-aware question answering with citation support.
+
+Developed as a Final Year Engineering Project using **FastAPI**, **React**, **MongoDB**, **ChromaDB**, and **Transformer-based Language Models**.
 
 ---
 
-## 🚀 Features
+## ✨ Features
 
-* 🔐 JWT Authentication (Email/Password)
-* 🔑 Google OAuth Login
-* 📄 PDF Upload & Processing
-* 🔎 arXiv Paper Search
-* 💬 Context-Grounded Q&A
-* 📊 Dashboard with Usage Stats
-* 📚 Persistent Chat History
-* 🧠 Vector Search (ChromaDB)
-* 🗂 MongoDB Backend
-* 🎨 React + Vite Frontend
+- 🔐 Secure user authentication with JWT
+- 🔑 Google OAuth login integration
+- 📄 Upload and process research papers in PDF format
+- 🔎 Search and retrieve papers from arXiv
+- 💬 Context-aware question answering using uploaded documents
+- 🧠 Semantic search powered by ChromaDB vector embeddings
+- 📚 Persistent chat history for each user
+- 📊 Dashboard with research activity and usage statistics
+- 📥 Export chat conversations as PDF
+- ⚡ Responsive React + Vite frontend
 
 ---
 
-# 🏗 Architecture
+# 🏗️ System Architecture
 
+```text
+                  +----------------------+
+                  |   React + Vite UI    |
+                  +----------+-----------+
+                             |
+                             |
+                      FastAPI Backend
+                             |
+          +------------------+------------------+
+          |                                     |
+     MongoDB                              ChromaDB
+(User Data & Chats)                (Vector Embeddings)
+          |                                     |
+          +------------------+------------------+
+                             |
+                 Transformer-based Models
+           (Embeddings + Context Retrieval)
 ```
-Frontend (React + Vite)
-        ↓
-FastAPI Backend
-        ↓
-MongoDB (Users, Chat, Metadata)
-        ↓
-ChromaDB (Vector Storage)
-        ↓
-Transformers (LLM + Embeddings)
-```
 
 ---
 
-# 📦 Tech Stack
+# 🛠️ Tech Stack
 
-## 🖥 Backend
+## Frontend
 
-* FastAPI
-* MongoDB (Motor async)
-* ChromaDB
-* Transformers
-* Sentence Transformers
-* Argon2 Password Hashing
-* JWT (python-jose)
-* Google OAuth
+- React 19
+- Vite
+- React Router
+- Axios
+- Framer Motion
+- jsPDF
 
-## 🌐 Frontend
+## Backend
 
-* React 19
-* Vite
-* React Router
-* Axios
-* jsPDF
-* Framer Motion
-
----
-
-# 🛠 Installation Guide
+- FastAPI
+- MongoDB (Motor)
+- ChromaDB
+- Transformers
+- Sentence Transformers
+- JWT Authentication
+- Google OAuth
+- Argon2 Password Hashing
 
 ---
 
-# 🔹 1️⃣ Clone the Repository
+# 🚀 Getting Started
+
+## 1. Clone the Repository
 
 ```bash
-git clone https://github.com/sneha2835/AI_Research.git
-cd AI_Research
-git checkout resolve_f
+git clone https://github.com/Srinidhi945/AI_Research_Companion.git
+cd AI_Research_Companion
+git checkout main
 ```
 
 ---
 
-# 🖥 Backend Setup
+## 2. Backend Setup
 
----
-
-## 🔹 2️⃣ Create Virtual Environment
+### Create a Virtual Environment
 
 ```bash
 cd backend
 python -m venv venv
 ```
 
-### Activate
+### Activate the Environment
 
 **Windows**
 
@@ -94,33 +97,23 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
-**Mac/Linux**
+**macOS/Linux**
 
 ```bash
 source venv/bin/activate
 ```
 
----
-
-## 🔹 3️⃣ Install Backend Dependencies
+### Install Dependencies
 
 ```bash
 pip install -r requirements_backend.txt
 ```
 
----
+### Configure Environment Variables
 
-## 🔹 4️⃣ Backend Environment Variables
+Create a `.env` file inside the `backend` directory.
 
-Create this file:
-
-```
-backend/.env
-```
-
-Add:
-
-```
+```env
 MONGO_URL=your_mongodb_connection_string
 DB_NAME=ai_research
 
@@ -135,21 +128,19 @@ GOOGLE_REDIRECT_URI=http://127.0.0.1:8000/auth/google/callback
 FRONTEND_URL=http://localhost:5173
 ```
 
----
-
-## 🔹 5️⃣ Run Backend
+### Run the Backend
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-Backend runs at:
+Backend API:
 
 ```
 http://127.0.0.1:8000
 ```
 
-Swagger docs:
+Swagger Documentation:
 
 ```
 http://127.0.0.1:8000/docs
@@ -157,46 +148,30 @@ http://127.0.0.1:8000/docs
 
 ---
 
-# 🌐 Frontend Setup
+## 3. Frontend Setup
 
----
-
-## 🔹 6️⃣ Install Frontend Dependencies
-
-Open a new terminal:
+Open a new terminal.
 
 ```bash
 cd frontend
 npm install
 ```
 
----
+Create a `.env` file inside the `frontend` directory.
 
-## 🔹 7️⃣ Frontend Environment Variables
-
-Create this file:
-
-```
-frontend/.env
-```
-
-Add:
-
-```
+```env
 VITE_API_BASE_URL=http://localhost:8000
 ```
 
-⚠ Important: All Vite environment variables must start with `VITE_`
+> **Note:** All Vite environment variables must start with `VITE_`.
 
----
-
-## 🔹 8️⃣ Run Frontend
+### Run the Frontend
 
 ```bash
 npm run dev
 ```
 
-Frontend runs at:
+Frontend URL:
 
 ```
 http://localhost:5173
@@ -204,28 +179,24 @@ http://localhost:5173
 
 ---
 
-# 🔐 Google OAuth Setup
+# 🔐 Google OAuth Configuration
 
-1. Go to Google Cloud Console
-2. Create OAuth 2.0 Client ID
-3. Add Authorized Redirect URI:
+1. Open the Google Cloud Console.
+2. Create an OAuth 2.0 Client ID.
+3. Add the following Authorized Redirect URI:
 
 ```
 http://127.0.0.1:8000/auth/google/callback
 ```
 
-4. Add the credentials inside:
-
-```
-backend/.env
-```
+4. Copy the generated credentials into the backend `.env` file.
 
 ---
 
 # 📂 Project Structure
 
-```
-AI_Research/
+```text
+AI_Research_Companion/
 │
 ├── backend/
 │   ├── app/
@@ -245,7 +216,7 @@ AI_Research/
 
 ---
 
-# 🧪 Development Workflow
+# 🔄 Development
 
 ### Start Backend
 
@@ -263,28 +234,15 @@ npm run dev
 
 ---
 
-# 📌 Current Status
+# 🎯 Roadmap
 
-✅ Authentication complete
-✅ Google OAuth integrated
-✅ Vector search working
-✅ Chat persistence implemented
-✅ PDF + arXiv ingestion working
-
-🚧 Hybrid retrieval (planned)
-🚧 Cross-encoder reranking (planned)
-🚧 Structured citation engine (planned)
-
----
-
-# 🧠 Roadmap
-
-* Hybrid Retrieval (BM25 + Semantic)
-* Cross-Encoder Reranking
-* Structured Citation Engine
-* Section-Aware Summarization
-* Hierarchical Summarization
-* Dockerized Deployment
+- Hybrid Retrieval (BM25 + Semantic Search)
+- Cross-Encoder Reranking
+- Structured Citation Engine
+- Section-Aware Summarization
+- Hierarchical Document Summarization
+- Docker Deployment
+- Cloud Deployment (AWS/GCP)
 
 ---
 
