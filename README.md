@@ -1,27 +1,27 @@
-# 🧠 AI Research Companion
+# AI Research Companion
 
-> An AI-powered research assistant that simplifies scientific literature review through semantic search, PDF analysis, and context-aware question answering with citation support.
+An AI-powered research assistant that simplifies scientific literature review through semantic search, PDF analysis, and context-aware question answering with citation support.
 
 Developed as a Final Year Engineering Project using **FastAPI**, **React**, **MongoDB**, **ChromaDB**, and **Transformer-based Language Models**.
 
 ---
 
-## ✨ Features
+## Features
 
-- 🔐 Secure user authentication with JWT
-- 🔑 Google OAuth login integration
-- 📄 Upload and process research papers in PDF format
-- 🔎 Search and retrieve papers from arXiv
-- 💬 Context-aware question answering using uploaded documents
-- 🧠 Semantic search powered by ChromaDB vector embeddings
-- 📚 Persistent chat history for each user
-- 📊 Dashboard with research activity and usage statistics
-- 📥 Export chat conversations as PDF
-- ⚡ Responsive React + Vite frontend
+- Secure user authentication using JWT
+- Google OAuth login integration
+- Upload and process research papers in PDF format
+- Search and retrieve research papers from arXiv
+- Context-aware question answering using uploaded documents
+- Semantic search powered by ChromaDB vector embeddings
+- Persistent chat history for each user
+- Dashboard with research activity and usage statistics
+- Export chat conversations as PDF
+- Responsive React + Vite frontend
 
 ---
 
-# 🏗️ System Architecture
+# System Architecture
 
 ```text
                   +----------------------+
@@ -44,7 +44,7 @@ Developed as a Final Year Engineering Project using **FastAPI**, **React**, **Mo
 
 ---
 
-# 🛠️ Tech Stack
+# Technology Stack
 
 ## Frontend
 
@@ -68,9 +68,9 @@ Developed as a Final Year Engineering Project using **FastAPI**, **React**, **Mo
 
 ---
 
-# 🚀 Getting Started
+# Getting Started
 
-## 1. Clone the Repository
+## Clone the Repository
 
 ```bash
 git clone https://github.com/Srinidhi945/AI_Research_Companion.git
@@ -80,9 +80,9 @@ git checkout main
 
 ---
 
-## 2. Backend Setup
+# Backend Setup
 
-### Create a Virtual Environment
+## Create a Virtual Environment
 
 ```bash
 cd backend
@@ -134,13 +134,13 @@ FRONTEND_URL=http://localhost:5173
 uvicorn app.main:app --reload
 ```
 
-Backend API:
+The backend server will be available at:
 
 ```
 http://127.0.0.1:8000
 ```
 
-Swagger Documentation:
+API documentation is available at:
 
 ```
 http://127.0.0.1:8000/docs
@@ -148,7 +148,7 @@ http://127.0.0.1:8000/docs
 
 ---
 
-## 3. Frontend Setup
+# Frontend Setup
 
 Open a new terminal.
 
@@ -163,7 +163,7 @@ Create a `.env` file inside the `frontend` directory.
 VITE_API_BASE_URL=http://localhost:8000
 ```
 
-> **Note:** All Vite environment variables must start with `VITE_`.
+> **Note:** All Vite environment variables must begin with `VITE_`.
 
 ### Run the Frontend
 
@@ -171,7 +171,7 @@ VITE_API_BASE_URL=http://localhost:8000
 npm run dev
 ```
 
-Frontend URL:
+The frontend application will be available at:
 
 ```
 http://localhost:5173
@@ -179,21 +179,20 @@ http://localhost:5173
 
 ---
 
-# 🔐 Google OAuth Configuration
+# Google OAuth Configuration
 
-1. Open the Google Cloud Console.
-2. Create an OAuth 2.0 Client ID.
-3. Add the following Authorized Redirect URI:
+1. Create an OAuth 2.0 Client ID in the Google Cloud Console.
+2. Add the following Authorized Redirect URI:
 
 ```
 http://127.0.0.1:8000/auth/google/callback
 ```
 
-4. Copy the generated credentials into the backend `.env` file.
+3. Copy the generated credentials into the backend `.env` file.
 
 ---
 
-# 📂 Project Structure
+# Project Structure
 
 ```text
 AI_Research_Companion/
@@ -216,16 +215,16 @@ AI_Research_Companion/
 
 ---
 
-# 🔄 Development
+# Development
 
-### Start Backend
+Start the backend:
 
 ```bash
 cd backend
 uvicorn app.main:app --reload
 ```
 
-### Start Frontend
+Start the frontend:
 
 ```bash
 cd frontend
@@ -234,7 +233,7 @@ npm run dev
 
 ---
 
-# 🎯 Roadmap
+# Roadmap
 
 - Hybrid Retrieval (BM25 + Semantic Search)
 - Cross-Encoder Reranking
@@ -245,4 +244,3 @@ npm run dev
 - Cloud Deployment (AWS/GCP)
 
 ---
-
